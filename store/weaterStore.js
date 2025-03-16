@@ -7,11 +7,11 @@ export const useCounterStore = create(set => ({
   getWeatherData: async ({city = 'Chandigarh'}) => {
     try {
       const response = await fetch(
-        `https://api.weatherapi.com/v1/forecast.json?key=acd3498f3fa548c8a40123911251503&q=${city}&days=1&aqi=no&alerts=no`,
-        // 'https://api.weatherapi.com/v1/current.json?key=acd3498f3fa548c8a40123911251503&q=Chandigarh',
+        `https://api.weatherapi.com/v1/forecast.json?key=Your_API_KEY&q=${city}&days=1&aqi=no&alerts=no`,
+        // 'https://api.weatherapi.com/v1/current.json?key=Your_API_KEY&q=Chandigarh',
       );
       const data = await response.json();
-      console.log(data, 'daaaaa');
+      // console.log(data, 'daaaaa');
 
       set({weatherData: data, forecastData: data?.forecast?.forecastday[0]});
     } catch (error) {
@@ -23,7 +23,7 @@ export const useCounterStore = create(set => ({
     const getWeatherData = async city_name => {
       try {
         const response = await fetch(
-          `https://api.weatherapi.com/v1/current.json?key=acd3498f3fa548c8a40123911251503&q=${city_name}`,
+          `https://api.weatherapi.com/v1/current.json?key=Your_API_KEY&q=${city_name}`,
         );
         const data = await response.json();
         return data;

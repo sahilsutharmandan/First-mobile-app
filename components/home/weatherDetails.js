@@ -16,7 +16,7 @@ import sunSet from '../../assets/images/sunsets.png';
 export default function WeatherDetails({route}) {
   const {city, country} = route.params;
   const {weatherData, getWeatherData, forecastData} = useCounterStore();
-  console.log(forecastData, 'forecastData');
+  //   console.log(forecastData, 'forecastData');
 
   useEffect(() => {
     getWeatherData(city);
